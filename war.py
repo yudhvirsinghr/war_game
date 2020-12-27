@@ -1,7 +1,6 @@
-from src import Cards
+from src import Card, Deck
 
-two_of_hearts = Cards('Hearts', 'Two')
+two_of_hearts = Card('Hearts', 'Two')
 
-print(two_of_hearts.rank)
-print(two_of_hearts.suit)
-print(two_of_hearts.value)
+new_deck = Deck()
+print(new_deck.cards)

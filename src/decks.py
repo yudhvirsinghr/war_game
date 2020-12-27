@@ -1,4 +1,5 @@
 import random
+from src import Card
 
 # GLOBALS
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
@@ -19,12 +20,17 @@ card_dict = {'Two': 2,
             'Ace': 14
             }
 
-class Card:
+class Deck:
 
-    def __init__(self, suit, rank):
-        self.suit = suit
-        self.rank = rank
-        self.value = card_dict[rank]
+    def __init__(self):
+        self.cards = []
+        for suit in suits:
+            for rank in ranks:
+                self.cards.append(Card(suit, rank))
 
-    def __str__(self):
-        return self.rank + " of " + self.suit
+    def shuffle(self):
+        random.shuffle(self.cards)
+
+    def deal_one(self):
+        return self.cards.pop()
+

@@ -1,1 +1,2 @@
-from src.cards import Cards
+from src.cards import Card
+from src.decks import Deck
